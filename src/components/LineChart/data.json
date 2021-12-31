@@ -1,0 +1,102 @@
+[
+  {
+    "localAuthority": "Cherwell",
+    "year": 2015,
+    "totalElectricityConsumption": 272779190.5
+  },
+  {
+    "localAuthority": "Cherwell",
+    "year": 2016,
+    "totalElectricityConsumption": 273689822.3
+  },
+  {
+    "localAuthority": "Cherwell",
+    "year": 2017,
+    "totalElectricityConsumption": 273814304.3
+  },
+  {
+    "localAuthority": "Cherwell",
+    "year": 2018,
+    "totalElectricityConsumption": 269405198.4
+  },
+  {
+    "localAuthority": "Cherwell",
+    "year": 2019,
+    "totalElectricityConsumption": 270790259.1
+  },
+  {
+    "localAuthority": "Oxford",
+    "year": 2015,
+    "totalElectricityConsumption": 217094067.5
+  },
+  {
+    "localAuthority": "Oxford",
+    "year": 2016,
+    "totalElectricityConsumption": 213697164.2
+  },
+  {
+    "localAuthority": "Oxford",
+    "year": 2017,
+    "totalElectricityConsumption": 210181484.8
+  },
+  {
+    "localAuthority": "Oxford",
+    "year": 2018,
+    "totalElectricityConsumption": 204168025.0
+  },
+  {
+    "localAuthority": "Oxford",
+    "year": 2019,
+    "totalElectricityConsumption": 202608616.5
+  },
+  {
+    "localAuthority": "South Oxfordshire",
+    "year": 2015,
+    "totalElectricityConsumption": 290541092.9
+  },
+  {
+    "localAuthority": "South Oxfordshire",
+    "year": 2016,
+    "totalElectricityConsumption": 290313293.4
+  },
+  {
+    "localAuthority": "South Oxfordshire",
+    "year": 2017,
+    "totalElectricityConsumption": 290021214.2
+  },
+  {
+    "localAuthority": "South Oxfordshire",
+    "year": 2018,
+    "totalElectricityConsumption": 284633239.3
+  },
+  {
+    "localAuthority": "South Oxfordshire",
+    "year": 2019,
+    "totalElectricityConsumption": 285574314.7
+  },
+  {
+    "localAuthority": "West Oxfordshire",
+    "year": 2015,
+    "totalElectricityConsumption": 224574338.4
+  },
+  {
+    "localAuthority": "West Oxfordshire",
+    "year": 2016,
+    "totalElectricityConsumption": 223278123.9
+  },
+  {
+    "localAuthority": "West Oxfordshire",
+    "year": 2017,
+    "totalElectricityConsumption": 221952959.2
+  },
+  {
+    "localAuthority": "West Oxfordshire",
+    "year": 2018,
+    "totalElectricityConsumption": 218493715.1
+  },
+  {
+    "localAuthority": "West Oxfordshire",
+    "year": 2019,
+    "totalElectricityConsumption": 220219871.1
+  }  
+]

@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import ChartWrapper from "./components/ChartWrapper/ChartWrapper";
+import LineChart from "./components/LineChart/LineChart";
+import BarGraph from "./components/BarGraph/BarGraph";
+// import HeatMap from "./components/HeatMap/HeatMap";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      {/*Sheet-1 -> LineChart  */}
+      <ChartWrapper title="Yearly Total Domestic Electricity Consumption by Local Authority (kWh)">
+        <LineChart />
+      </ChartWrapper>
+
+      {/* Sheet-2 BarGraph */}
+      <ChartWrapper>
+        <BarGraph />
+      </ChartWrapper>
+      {/* 
+
+        Sheet-3 -> HeatMap
+        <ChartWrapper title="Half Hourly Sum of Generation & Load">
+          <HeatMap />
+        </ChartWrapper> 
+      
+      */}
     </div>
   );
 }

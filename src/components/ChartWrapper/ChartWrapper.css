@@ -1,0 +1,15 @@
+.chart-wrapper {
+  padding: 2rem;
+  margin: 2rem;
+  min-width: 90vw;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.chart-wrapper h2 {
+  color: rgb(100, 100, 100);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
