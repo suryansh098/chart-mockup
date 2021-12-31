@@ -3,7 +3,7 @@ import React from "react";
 import ChartWrapper from "./components/ChartWrapper/ChartWrapper";
 import LineChart from "./components/LineChart/LineChart";
 import BarGraph from "./components/BarGraph/BarGraph";
-// import HeatMap from "./components/HeatMap/HeatMap";
+import HeatMap from "./components/HeatMap/HeatMap";
 import "./App.css";
 
 function App() {
@@ -11,22 +11,21 @@ function App() {
     <div className="App">
       
       {/*Sheet-1 -> LineChart  */}
-      <ChartWrapper title="Yearly Total Domestic Electricity Consumption by Local Authority (kWh)">
+      <ChartWrapper title="Annual Electricity Demand">
         <LineChart />
       </ChartWrapper>
 
       {/* Sheet-2 BarGraph */}
-      <ChartWrapper>
+      <ChartWrapper title="Renewable Potential">
         <BarGraph />
       </ChartWrapper>
-      {/* 
 
-        Sheet-3 -> HeatMap
-        <ChartWrapper title="Half Hourly Sum of Generation & Load">
-          <HeatMap />
-        </ChartWrapper> 
       
-      */}
+      {/* Sheet-3 -> HeatMap */}
+      <ChartWrapper title="Half Hourly Sum of Generation & Load">
+        <HeatMap />
+      </ChartWrapper> 
+     
     </div>
   );
 }

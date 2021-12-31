@@ -1,91 +1,82 @@
 import React from "react";
-import {
-  Chart,
-  Axis,
-  Tooltip,
-  Coordinate,
-  Legend,
-  Interval,
-} from "bizcharts";
-import DataSet from "@antv/data-set";
+import ReactApexChart from "react-apexcharts";
+
 import data from "./RenewablePotential.json";
 
 const BarGraph = () => {
-  // const data = [
-  //   {
-  //     label: "Monday",
-  //     Area_m2: 2800,
-  //     SolCaMW: 2260,
-  //   },
-  //   {
-  //     label: "Tuesday",
-  //     Area_m2: 1800,
-  //     SolCaMW: 1300,
-  //   },
-  //   {
-  //     label: "Wednesday",
-  //     Area_m2: 950,
-  //     SolCaMW: 900,
-  //   },
-  //   {
-  //     label: "Thursday",
-  //     Area_m2: 500,
-  //     SolCaMW: 390,
-  //   },
-  //   {
-  //     label: "Friday",
-  //     Area_m2: 170,
-  //     SolCaMW: 100,
-  //   },
-  // ];
-  const ds = new DataSet();
-  const dv = ds.createView().source(data);
-  dv.transform({
-    type: "fold",
-    fields: ["Area_m2", "SolCaMW"],
-    key: "type",
-    value: "value",
-  });
-  console.log(dv.rows);
+  const FID = [];
+  const Area_m2 = [];
+  const SolCaMW = [];
 
-  const scale = {
-    Area_m2: {
-      alias: 'Area_m2',
-      tickCount: 5,
-      min: 0,
-      type: 'linear-strict'
+  data.forEach((row) => {
+    FID.push(row.FID);
+    Area_m2.push(row.Area_m2);
+    SolCaMW.push(row.SolCaMW);
+  });
+
+  const series = [
+    {
+      name: "Area_m2",
+      data: Area_m2,
     },
-    SolCaMW: {
-      alias: 'SolCamW',
-      tickCount: 5,
-      min: 0,
-      type: 'linear-strict'
-    }
-  }
+    {
+      name: "SolCaMW",
+      data: SolCaMW,
+    },
+  ];
+
+  const options = {
+    chart: {
+      type: "bar",
+      height: 500,
+    },
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: "55%",
+        endingShape: "rounded",
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      show: true,
+      width: 2,
+      colors: ["transparent"],
+    },
+    xaxis: {
+      categories: FID,
+    },
+    yaxis: [
+      {
+        seriesName: "Area_m2",
+        title: {
+          text: "Area_m2",
+        },
+        axisTicks: {
+          show: true,
+        },
+      },
+      {
+        opposite: true,
+        seriesName: "SolCaMW",
+        title: {
+          text: "SolCaMW",
+        },
+
+        axisTicks: {
+          show: true,
+        },
+      },
+    ],
+    fill: {
+      opacity: 1,
+    },
+  };
+
   return (
-    <Chart height={400} data={dv.rows} autoFit>
-      <Legend />
-      <Coordinate actions={[["scale", 1, -1], ["transpose"]]} />
-      <Axis
-        name="FID"
-        label={{
-          offset: 12,
-        }}
-      />
-      <Axis name="value" position={"right"} />
-      {/* <Axis name="value2" position={"left"} /> */}
-      <Tooltip />
-      <Interval
-        position="FID*value"
-        color={"type"}
-        adjust={[
-          {
-            type: "dodge",
-            marginRatio: 1 / 32,
-          },
-        ]}
-      />
-    </Chart>
+    <ReactApexChart options={options} series={series} type="bar" height={500} />
   );
 };
 
