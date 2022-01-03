@@ -9,7 +9,6 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      
       {/*Sheet-1 -> LineChart  */}
       <ChartWrapper title="Annual Electricity Demand">
         <LineChart />
@@ -20,12 +19,10 @@ function App() {
         <BarGraph />
       </ChartWrapper>
 
-      
       {/* Sheet-3 -> HeatMap */}
       <ChartWrapper title="Half Hourly Sum of Generation & Load">
         <HeatMap />
-      </ChartWrapper> 
-     
+      </ChartWrapper>
     </div>
   );
 }

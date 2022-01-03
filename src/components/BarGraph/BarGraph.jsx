@@ -47,22 +47,41 @@ const BarGraph = () => {
     },
     xaxis: {
       categories: FID,
+      title: {
+        text: "FID",
+        style: {
+          fontWeight: "600",
+        },
+      },
     },
     yaxis: [
       {
         seriesName: "Area_m2",
+        decimalsInFloat: 0,
         title: {
           text: "Area_m2",
+          style: {
+            fontWeight: "600",
+          },
         },
         axisTicks: {
           show: true,
+        },
+        labels: {
+          formatter: function (value) {
+            return value.toString().replace(/(\d)(?=(\d{3})+$)/g, "$1,");
+          },
         },
       },
       {
         opposite: true,
         seriesName: "SolCaMW",
+        decimalsInFloat: 0,
         title: {
           text: "SolCaMW",
+          style: {
+            fontWeight: "600",
+          },
         },
 
         axisTicks: {
@@ -72,6 +91,26 @@ const BarGraph = () => {
     ],
     fill: {
       opacity: 1,
+    },
+    tooltip: {
+      y: [
+        {
+          formatter: function (value) {
+            let stringValue = value.toString().split(".");
+            let originalValue = stringValue[0].replace(
+              /(\d)(?=(\d{3})+$)/g,
+              "$1,"
+            );
+            let decimalValue = stringValue[1];
+            return `${originalValue}.${decimalValue}`;
+          },
+        },
+        {
+          formatter: function (value) {
+            return value;
+          },
+        },
+      ],
     },
   };
 

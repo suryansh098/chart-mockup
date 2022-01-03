@@ -1,18 +1,11 @@
 import React from "react";
-import {
-  Chart,
-  Geom,
-  Axis,
-  Tooltip,
-  Legend,
-  Annotation,
-} from "bizcharts";
-import data from './data.json';
+import { Chart, Geom, Axis, Tooltip, Legend, Annotation } from "bizcharts";
+import data from "./data.json";
 
 const LineChart = () => {
   const scale = {
     totalElectricityConsumption: {
-      type: 'linear',
+      type: "linear",
       min: 200000000,
       max: 300000000,
       // for specifying custom lines
@@ -30,7 +23,8 @@ const LineChart = () => {
       <Axis
         name="totalElectricityConsumption"
         label={{
-          formatter: (val) => `${val} kWh`,
+          formatter: (val) =>
+            `${val.toString().replace(/(\d)(?=(\d{3})+$)/g, "$1,")} kWh`,
         }}
       />
       <Tooltip showCrosshairs shared />
@@ -40,7 +34,10 @@ const LineChart = () => {
           "totalElectricityConsumption*localAuthority",
           (value, name) => {
             return {
-              value: `${value.toFixed(2)} kWh`,
+              value: `${value
+                .toFixed(0)
+                .toString()
+                .replace(/(\d)(?=(\d{3})+$)/g, "$1,")} kWh`,
               name,
             };
           },
