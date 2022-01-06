@@ -1,7 +1,6 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
 import jsonData from "./ForecastPVYield.json";
-// import jsonData from "./csvjson.json";
 
 const HeatMap = () => {
   const dateArray = jsonData[0][""];
@@ -35,7 +34,7 @@ const HeatMap = () => {
         offsetY: 40,
       },
     },
-    colors: ["#FF0000"],
+    colors: ["#FFC000"],
   };
 
   return (

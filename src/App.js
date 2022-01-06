@@ -1,9 +1,10 @@
 import React from "react";
-
+import "antd/dist/antd.css";
 import ChartWrapper from "./components/ChartWrapper/ChartWrapper";
-import LineChart from "./components/LineChart/LineChart";
-import BarGraph from "./components/BarGraph/BarGraph";
-import HeatMap from "./components/HeatMap/HeatMap";
+import LineChart from "./components/ApexLineChart/LineChart";
+// import LineChart from "./components/LineChart/LineChart";
+// import BarGraph from "./components/BarGraph/BarGraph";
+// import HeatMap from "./components/HeatMap/HeatMap";
 import "./App.css";
 
 function App() {
@@ -15,14 +16,16 @@ function App() {
       </ChartWrapper>
 
       {/* Sheet-2 BarGraph */}
-      <ChartWrapper title="Renewable Potential">
+      {/* <ChartWrapper title="Renewable Potential">
         <BarGraph />
-      </ChartWrapper>
+      </ChartWrapper> */}
 
       {/* Sheet-3 -> HeatMap */}
-      <ChartWrapper title="Half Hourly Sum of Generation & Load">
+      {/* <ChartWrapper title="Half Hourly Sum of Generation & Load">
         <HeatMap />
-      </ChartWrapper>
+      </ChartWrapper> */}
+
+
     </div>
   );
 }

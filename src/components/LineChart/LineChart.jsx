@@ -1,6 +1,6 @@
 import React from "react";
 import { Chart, Geom, Axis, Tooltip, Legend, Annotation } from "bizcharts";
-import data from "./data.json";
+import data from "./AnnualElectricity.json";
 
 const LineChart = () => {
   const scale = {

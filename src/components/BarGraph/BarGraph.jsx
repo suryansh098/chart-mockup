@@ -1,27 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
 
+import AxisValueSelector from "../AxisValueSelector/AxisValueSelector";
 import data from "./RenewablePotential.json";
 
 const BarGraph = () => {
-  const FID = [];
-  const Area_m2 = [];
-  const SolCaMW = [];
-
-  data.forEach((row) => {
-    FID.push(row.FID);
-    Area_m2.push(row.Area_m2);
-    SolCaMW.push(row.SolCaMW);
-  });
+  const [xAxis, setXAxis] = useState("FID");
+  const [yAxis1, setYAxis1] = useState("Area_m2");
+  const [yAxis2, setYAxis2] = useState("SolCaMW");
 
   const series = [
     {
-      name: "Area_m2",
-      data: Area_m2,
+      name: yAxis1,
+      data: data[yAxis1],
     },
     {
-      name: "SolCaMW",
-      data: SolCaMW,
+      name: yAxis2,
+      data: data[yAxis2],
     },
   ];
 
@@ -46,9 +41,9 @@ const BarGraph = () => {
       colors: ["transparent"],
     },
     xaxis: {
-      categories: FID,
+      categories: data[xAxis],
       title: {
-        text: "FID",
+        text: xAxis,
         style: {
           fontWeight: "600",
         },
@@ -56,10 +51,10 @@ const BarGraph = () => {
     },
     yaxis: [
       {
-        seriesName: "Area_m2",
+        seriesName: yAxis1,
         decimalsInFloat: 0,
         title: {
-          text: "Area_m2",
+          text: yAxis1,
           style: {
             fontWeight: "600",
           },
@@ -75,10 +70,10 @@ const BarGraph = () => {
       },
       {
         opposite: true,
-        seriesName: "SolCaMW",
+        seriesName: yAxis2,
         decimalsInFloat: 0,
         title: {
-          text: "SolCaMW",
+          text: yAxis2,
           style: {
             fontWeight: "600",
           },
@@ -101,7 +96,7 @@ const BarGraph = () => {
               /(\d)(?=(\d{3})+$)/g,
               "$1,"
             );
-            let decimalValue = stringValue[1];
+            let decimalValue = stringValue[1] ? stringValue[1] : "00";
             return `${originalValue}.${decimalValue}`;
           },
         },
@@ -115,7 +110,22 @@ const BarGraph = () => {
   };
 
   return (
-    <ReactApexChart options={options} series={series} type="bar" height={500} />
+    <div>
+      <AxisValueSelector
+        xAxis={xAxis}
+        setXAxis={setXAxis}
+        yAxis1={yAxis1}
+        setYAxis1={setYAxis1}
+        yAxis2={yAxis2}
+        setYAxis2={setYAxis2}
+      />
+      <ReactApexChart
+        options={options}
+        series={series}
+        type="bar"
+        height={500}
+      />
+    </div>
   );
 };
 
